@@ -42,11 +42,11 @@ export LD_LIBRARY_PATH=/opt/gimp-git/lib
 export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig
 
 # GTK 
-#co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
+co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
 # BABL
-#co_compile_install "babl" 
+co_compile_install "babl" 
 # GEGL
-#co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
+co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
 # GIMP
 co_compile_install "gimp" "--enable-gimp-remote --prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
 
