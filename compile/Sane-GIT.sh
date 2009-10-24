@@ -13,7 +13,7 @@ co_compile_install()
                 git pull
         else
                 echo "Directory does not exists - CHECKING OUT"
-                git clone git://git.debian.org/sane/$DIR
+                git clone git://git.debian.org/sane/$DIR.git
                 cd $DIR
         fi
 
@@ -28,12 +28,18 @@ co_compile_install()
         cd ..
 }
 
-#apt-get install libusb++-dev  libusb-dev
+apt-get install libusb++-dev  libusb-dev
 
-#co_compile_install sane-backends.git
-#co_compile_install sane-frontends.git 
+mkdir -p /usr/src/frustrado
+cd /usr/src/frustrado
 
-wget ftp://ftp.sane-project.org/pub/sane/xsane/xsane-0.996.tar.gz 
+co_compile_install sane-backends
+
+sed -r 's#echo 1.0.21#echo 1.1.0#g' -i /usr/bin/sane-config 
+
+co_compile_install sane-frontends 
+
+#wget ftp://ftp.sane-project.org/pub/sane/xsane/xsane-0.996.tar.gz 
 tar -zxvf xsane-0.996.tar.gz
 cd xsane-0.996
 
