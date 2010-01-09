@@ -29,7 +29,7 @@ co_compile_install()
 	cd ..
 }
 
-#apt-get install gtk-doc-tools automake1.7 libopenraw-dev libavformat-dev python-gtk2-dev python-dev libwebkit-dev libpoppler-dev librsvg2-dev libxpm-dev libhal-dev libdbus-1-dev libtiff4-dev libxmuu-dev libwmf-dev libaa1-dev liblcms1-dev  libmng-dev lprof libexif-dev libhal-dev libhal-storage-dev libasound2-dev libpoppler-dev  libpoppler-glib-dev  poppler-utils libdbus-glib-1-dev
+apt-get install gtk-doc-tools automake1.7 libopenraw-dev libavformat-dev python-gtk2-dev python-dev libwebkit-dev libpoppler-dev librsvg2-dev libxpm-dev libhal-dev libdbus-1-dev libtiff4-dev libxmuu-dev libwmf-dev libaa1-dev liblcms1-dev  libmng-dev lprof libexif-dev libhal-dev libhal-storage-dev libasound2-dev libpoppler-dev  libpoppler-glib-dev  poppler-utils libdbus-glib-1-dev libwebkit-dev asciidoc enscript liblua50-dev libsdl1.2-dev graphviz libspiro-dev
 
 mkdir -p /usr/src/frustrado
 cd /usr/src/frustrado
@@ -48,8 +48,8 @@ co_compile_install "babl"
 # GEGL
 co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
 # GIMP
-#co_compile_install "gimp" "--enable-gimp-remote --prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
-co_compile_install "gimp" "--prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
+co_compile_install "gimp" "--enable-gimp-remote --prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
+#co_compile_install "gimp" "--prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
 
 
 cat >> /usr/share/applications/gimp-git.desktop << EOF
