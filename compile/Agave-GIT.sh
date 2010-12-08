@@ -25,7 +25,7 @@ co_compile_install()
 
 	#./autogen.sh
 	pwd
-	./configure --prefix=/opt/git/agave $PARAMS && make &&  make install
+	./autogen.sh --prefix=/opt/git/agave $PARAMS && make &&  make install
 	cd ..
 }
 

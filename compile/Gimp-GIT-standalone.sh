@@ -38,8 +38,8 @@ cd /usr/src/frustrado
 #co_compile_install "glib" 
 
 export PATH=/opt/gimp-git/bin:$PATH
-export LD_LIBRARY_PATH=/opt/gimp-git/lib
-export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig
+#export LD_LIBRARY_PATH=/opt/gimp-git/lib
+#export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig
 
 # GTK 
 #co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
