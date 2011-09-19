@@ -11,21 +11,23 @@ apt-get install ubuntu-dev-tools bzr-doc bzrtools bzr-rebase bzr-search bzr-stat
 if [ -d $DIR ]; then
 	echo "Directory exists - UPDATING"
 	cd $DIR
-	#svn update
+	#bzr update
 	bzr pull
 else 
 	echo "Directory does not exists - CHECKING OUT"
-	#svn co https://inkscape.svn.sourceforge.net/svnroot/inkscape/inkscape/trunk inkscape
-	bzr branch lp:inkscape
+	#bzr co https://inkscape.bzr.sourceforge.net/bzrroot/inkscape/inkscape/trunk inkscape
+#	bzr branch lp:inkscape
+	bzr checkout lp:inkscape
 	cd $DIR
 fi
 
+apt-get build-dep inkscape
 apt-get install libgc-dev libgnomevfs2-dev libgtkmm-2.4-dev libxslt1-dev libsigc++-2.0-dev libgsl0-dev libboost-dev libpopt-dev libpoppler-glib-dev libwpg-dev imagemagick libmagick++-dev create-resources 
 
 ./autogen.sh
-./configure --prefix=/opt/inkscape-svn --enable-lcms --enable-inkboard --with-gnome-vfs  --with-perl  --with-python && make && make install
+./configure --prefix=/opt/inkscape-bzr --enable-lcms --enable-inkboard --with-gnome-vfs  --with-perl  --with-python && make && make install
 
-cat >> /usr/share/applications/inkscape-svn.desktop << EOF
+cat > /usr/share/applications/inkscape-bzr.desktop << EOF
 [Desktop Entry]
 Version=1.0
 Encoding=UTF-8
@@ -34,11 +36,19 @@ Comment=Create and edit Scalable Vector Graphics images - SVN
 Type=Application
 Categories=Application;Graphics;VectorGraphics;GTK;
 MimeType=image/svg+xml
-Exec=/opt/inkscape-svn/bin/inkscape %F
-TryExec=/opt/inkscape-svn/bin/inkscape
+Exec=/opt/inkscape-bzr/bin/inkscape %F
+TryExec=/opt/inkscape-bzr/bin/inkscape
 Terminal=false
 StartupNotify=true
 Icon=inkscape.png
 EOF
+
+cat > /usr/local/bin/inkscape-bzr << EOF
+#!/bin/bash
+cd /opt/inkscape-bzr/bin/
+./inkscape $1
+EOF
+chmod a+x /usr/local/bin/inkscape-bzr
+
 
 killall -9 gnome-panel
