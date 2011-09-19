@@ -4,7 +4,6 @@
 apt-get build-dep scribus-ng
 apt-get install gcc g++ cmake subversion ghostscript qt-devel pkg-config lcms-devel libjpeg-devel libtiff-devel libart_lgpl-devel cups-devel libxml2 and libxml2-devel libxml2 python-devel fontconfig-devel openssl-devel freetype freetype-devel python-imaging-devel tk tkinter cairo acairo-devel qt4 qt4-devel qt4-qmake 
 
-
 mkdir /usr/src/frustrado/scribus -p
 mkdir /opt/svn/scribus -p
 cd /usr/src/frustrado/scribus
@@ -26,7 +25,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/svn/scribus
 make
 make install
 
-cat >> /usr/share/applications/scribus-svn.desktop << EOF
+cat > /usr/share/applications/scribus-svn.desktop << EOF
 [Desktop Entry]
 Type=Application
 Name=ScribusSVN
@@ -47,3 +46,10 @@ Type=QString
 Value=.sla
 EOF
 
+cat > /usr/local/bin/scribus-svn <<EOF
+#!/bin/bash
+cd /opt/svn/scribus/bin/
+./scribus $1 $2 $3 $4 $5 $6
+EOF
+
+chmod a+x /usr/local/bin/scribus-svn

@@ -25,12 +25,14 @@ co_compile_install()
 
 	./autogen.sh
 	pwd
-	./configure --prefix=/opt/gimp-git $PARAMS && make &&  make install
+	./configure --prefix=/opt/gimp-git --enable-introspection=no $PARAMS && make &&  make install
 	cd ..
 }
 
 apt-get build-dep gimp
 apt-get install gtk-doc-tools automake1.7 libopenraw-dev libavformat-dev python-gtk2-dev python-dev libwebkit-dev libpoppler-dev librsvg2-dev libxpm-dev libhal-dev libdbus-1-dev libtiff4-dev libxmuu-dev libwmf-dev libaa1-dev liblcms1-dev  libmng-dev lprof libexif-dev libhal-dev libhal-storage-dev libasound2-dev libpoppler-dev  libpoppler-glib-dev  poppler-utils libdbus-glib-1-dev libwebkit-dev asciidoc enscript liblua50-dev libsdl1.2-dev graphviz libspiro-dev
+
+apt-get build-dep gimp
 
 mkdir -p /usr/src/frustrado
 cd /usr/src/frustrado
@@ -39,8 +41,13 @@ cd /usr/src/frustrado
 #co_compile_install "glib" 
 
 export PATH=/opt/gimp-git/bin:$PATH
+<<<<<<< HEAD
 export LD_LIBRARY_PATH=/opt/gimp-git/lib
 export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig
+=======
+export LD_LIBRARY_PATH=/opt/gimp-git/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig:$PKG_CONFIG_PATH
+>>>>>>> a3346269267ca5a4301cffe53ec1d12f8b8668a3
 
 # GTK 
 #co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
