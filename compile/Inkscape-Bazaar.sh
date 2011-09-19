@@ -5,6 +5,7 @@ cd /usr/src/frustrado
 
 DIR=inkscape
 
+apt-get build-dep inkscape
 apt-get install ubuntu-dev-tools bzr-doc bzrtools bzr-rebase bzr-search bzr-stats
 
 

@@ -14,7 +14,7 @@ co_compile_install()
 		git pull
 	else 
 		echo "Directory does not exists - CHECKING OUT"
-		git clone git://git.gnome.org/$DIR
+		git --depth 3 clone git://git.gnome.org/$DIR
 		cd $DIR
 	fi
 
@@ -29,6 +29,7 @@ co_compile_install()
 	cd ..
 }
 
+apt-get build-dep gimp
 apt-get install gtk-doc-tools automake1.7 libopenraw-dev libavformat-dev python-gtk2-dev python-dev libwebkit-dev libpoppler-dev librsvg2-dev libxpm-dev libhal-dev libdbus-1-dev libtiff4-dev libxmuu-dev libwmf-dev libaa1-dev liblcms1-dev  libmng-dev lprof libexif-dev libhal-dev libhal-storage-dev libasound2-dev libpoppler-dev  libpoppler-glib-dev  poppler-utils libdbus-glib-1-dev libwebkit-dev asciidoc enscript liblua50-dev libsdl1.2-dev graphviz libspiro-dev
 
 mkdir -p /usr/src/frustrado
@@ -38,15 +39,15 @@ cd /usr/src/frustrado
 #co_compile_install "glib" 
 
 export PATH=/opt/gimp-git/bin:$PATH
-#export LD_LIBRARY_PATH=/opt/gimp-git/lib
-#export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig
+export LD_LIBRARY_PATH=/opt/gimp-git/lib
+export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig
 
 # GTK 
 #co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
 # BABL
-co_compile_install "babl" 
+#co_compile_install "babl" 
 # GEGL
-co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
+#co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
 # GIMP
 co_compile_install "gimp" "--enable-gimp-remote --prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
 #co_compile_install "gimp" "--prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
