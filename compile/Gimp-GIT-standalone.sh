@@ -14,7 +14,7 @@ co_compile_install()
 		git pull
 	else 
 		echo "Directory does not exists - CHECKING OUT"
-		git --depth 3 clone git://git.gnome.org/$DIR
+		git clone --depth 3 git://git.gnome.org/$DIR
 		cd $DIR
 	fi
 
@@ -41,13 +41,8 @@ cd /usr/src/frustrado
 #co_compile_install "glib" 
 
 export PATH=/opt/gimp-git/bin:$PATH
-<<<<<<< HEAD
 export LD_LIBRARY_PATH=/opt/gimp-git/lib
 export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig
-=======
-export LD_LIBRARY_PATH=/opt/gimp-git/lib:$LD_LIBRARY_PATH
-export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig:$PKG_CONFIG_PATH
->>>>>>> a3346269267ca5a4301cffe53ec1d12f8b8668a3
 
 # GTK 
 #co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
