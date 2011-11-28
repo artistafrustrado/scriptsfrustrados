@@ -14,7 +14,7 @@ co_compile_install()
 		git pull
 	else 
 		echo "Directory does not exists - CHECKING OUT"
-		git clone git://git.gnome.org/$DIR
+		git clone git://git.gnome.org/$DIR --depth 3
 		cd $DIR
 	fi
 
