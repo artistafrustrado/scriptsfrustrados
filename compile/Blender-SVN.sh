@@ -4,8 +4,16 @@ apt-get install subversion build-essential gettext libxi-dev libsndfile1-dev lib
 
 mkdir -p /usr/src/frustrado/blender
 cd /usr/src/frustrado/blender 
-svn co https://svn.blender.org/svnroot/bf-blender/trunk/blender
 
+if [ -d /usr/src/frustrado/blender/blender ]
+then 
+	cd blender
+	svn update
+	cd ..
+else
+	svn co https://svn.blender.org/svnroot/bf-blender/trunk/blender
+fi
+rm -fr build-blender
 mkdir build-blender
 cd build-blender
 

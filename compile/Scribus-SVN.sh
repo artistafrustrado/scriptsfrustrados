@@ -3,8 +3,8 @@
 
 apt-get install gcc g++ cmake subversion  ghostscript qt-devel pkg-config lcms-devel libjpeg-devel libtiff-devel libart_lgpl-devel cups-devel libxml2 and libxml2-devel – you should already have libxml2 python and python-devel fontconfig-devel openssl-devel freetype and freetype-devel python-imaging-devel tk tkinter cairo cairo-devel qt4 qt4-devel 
 
-#apt-get build-dep scribus
 apt-get build-dep scribus-ng
+apt-get install gcc g++ cmake subversion ghostscript qt-devel pkg-config lcms-devel libjpeg-devel libtiff-devel libart_lgpl-devel cups-devel libxml2 and libxml2-devel libxml2 python-devel fontconfig-devel openssl-devel freetype freetype-devel python-imaging-devel tk tkinter cairo acairo-devel qt4 qt4-devel qt4-qmake 
 
 mkdir /usr/src/frustrado/scribus -p
 mkdir /opt/svn/scribus -p
@@ -18,9 +18,6 @@ if [ -d "$DIR" ]; then
 	svn update
 else 
 	echo "Directory does not exists - CHECKING OUT"
-#	svn co svn://scribus.info/Scribus/trunk/Scribus
-#	svn co https://scribus.svn.sourceforge.net/svnroot/scribus $DIR 
-#	svn co svn://scribus.net/branches/Version150/Scribus $DIR 
 	svn co svn://scribus.net/trunk/Scribus $DIR 
 	cd $DIR
 fi
@@ -29,7 +26,7 @@ cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/svn/scribus
 make
 make install
 
-cat >> /usr/share/applications/scribus-svn.desktop << EOF
+cat > /usr/share/applications/scribus-svn.desktop << EOF
 [Desktop Entry]
 Type=Application
 Name=ScribusSVN
