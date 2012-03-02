@@ -47,15 +47,15 @@ export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig
 # GTK 
 #co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
 # BABL
-#co_compile_install "babl" 
+co_compile_install "babl" 
 # GEGL
-#co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
+co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
 # GIMP
 co_compile_install "gimp" "--enable-gimp-remote --prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
 #co_compile_install "gimp" "--prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
 
 
-cat >> /usr/share/applications/gimp-git.desktop << EOF
+cat > /usr/share/applications/gimp-git.desktop << EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -64,7 +64,7 @@ GenericName=Image Editor - GIT
 Comment=Create images and edit photographs - GIT
 Exec=/opt/gimp-git/bin/gimp-2.7 %U
 TryExec=/opt/gimp-git/bin/gimp-2.7
-Icon=/opt/gimp-git/share/icons/hicolor/scalable/apps/gimp.svg
+Icon=/opt/gimp-git/share/icons/hicolor/48x48/apps/gimp.png
 Terminal=false
 Categories=Graphics;2DGraphics;RasterGraphics;GTK;
 StartupNotify=true

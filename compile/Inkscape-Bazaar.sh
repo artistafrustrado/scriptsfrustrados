@@ -6,7 +6,7 @@ cd /usr/src/frustrado
 DIR=inkscape
 
 apt-get build-dep inkscape
-apt-get install ubuntu-dev-tools bzr-doc bzrtools bzr-rebase bzr-search bzr-stats
+apt-get install ubuntu-dev-tools bzr-doc bzrtools bzr-rebase bzr-search bzr-stats libdbus-c++-dev libdbus-1-dev libdbusmenu-tools 
 
 
 if [ -d $DIR ]; then
@@ -37,8 +37,8 @@ Comment=Create and edit Scalable Vector Graphics images - SVN
 Type=Application
 Categories=Application;Graphics;VectorGraphics;GTK;
 MimeType=image/svg+xml
-Exec=/opt/inkscape-bzr/bin/inkscape %F
-TryExec=/opt/inkscape-bzr/bin/inkscape
+Exec=/opt/bzr/inkscape/bin/inkscape %F
+TryExec=/opt/bzr/inkscape/bin/inkscape
 Terminal=false
 StartupNotify=true
 Icon=inkscape.png
