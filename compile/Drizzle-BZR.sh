@@ -25,3 +25,9 @@ cd drizzle
 ./config/autorun.sh --prefix=/opt/drizzle
 ./configure --prefix=/opt/drizzle && make && make install
 
+chown drizzle /opt/drizzle/var/drizzle/ -R
+
+mkdir /opt/drizzle/logs/
+chown -R drizzle /opt/drizzle/logs/ 
+
+mkdir /etc/drizzle/
