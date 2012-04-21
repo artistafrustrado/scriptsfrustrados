@@ -25,7 +25,7 @@ co_compile_install()
 
 	./autogen.sh
 	pwd
-	./configure --prefix=/opt/gimp-git --enable-introspection=no $PARAMS && make &&  make install
+	./configure --prefix=/opt/git/gimp --enable-introspection=no $PARAMS && make &&  make install
 	cd ..
 }
 
@@ -40,31 +40,32 @@ cd /usr/src/frustrado
 # GLIB
 #co_compile_install "glib" 
 
-export PATH=/opt/gimp-git/bin:$PATH
-export LD_LIBRARY_PATH=/opt/gimp-git/lib
-export PKG_CONFIG_PATH=/opt/gimp-git/lib/pkgconfig
+export PATH=/opt/git/gimp/bin:$PATH
+export LD_LIBRARY_PATH=/opt/git/gimp/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # GTK 
 #co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
 # BABL
-#co_compile_install "babl" 
+co_compile_install "babl" 
 # GEGL
 #co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
+co_compile_install "gegl" 
 # GIMP
-co_compile_install "gimp" "--enable-gimp-remote --prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
-#co_compile_install "gimp" "--prefix=/opt/gimp-git/  --with-gimpdir=.gimp-git" 
+co_compile_install "gimp" "--enable-gimp-remote --prefix=/opt/git/gimp/  --with-gimpdir=.gimp-git" 
+#co_compile_install "gimp" "--prefix=/opt/git/gimp/  --with-gimpdir=.git/gimp" 
 
 
-cat >> /usr/share/applications/gimp-git.desktop << EOF
+cat >> /usr/share/applications/git/gimp.desktop << EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
 Name=GNU Image Manipulation Program - GIT
 GenericName=Image Editor - GIT
 Comment=Create images and edit photographs - GIT
-Exec=/opt/gimp-git/bin/gimp-2.7 %U
-TryExec=/opt/gimp-git/bin/gimp-2.7
-Icon=/opt/gimp-git/share/icons/hicolor/scalable/apps/gimp.svg
+Exec=/opt/git/gimp/bin/gimp-2.7 %U
+TryExec=/opt/git/gimp/bin/gimp-2.7
+Icon=/opt/git/gimp/share/icons/hicolor/scalable/apps/gimp.svg
 Terminal=false
 Categories=Graphics;2DGraphics;RasterGraphics;GTK;
 StartupNotify=true
