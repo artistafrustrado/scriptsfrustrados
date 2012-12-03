@@ -8,6 +8,7 @@ apt-get build-dep scribus-ng
 
 apt-get install debhelper cmake gcc libqt4-dev libcairo2-dev  zlib1g-dev liblcms1-dev libtiff4-dev libcups2-dev libxml2-dev  gettext python-all-dev libboost-python-dev libaspell-dev libpodofo-dev quilt subversion 
 
+# git clone git@scribus.net:scribus.git
 
 mkdir /usr/src/frustrado/scribus -p
 mkdir /opt/svn/scribus -p
