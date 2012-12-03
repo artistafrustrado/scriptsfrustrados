@@ -40,6 +40,7 @@ cd /usr/src/frustrado
 # GLIB
 #co_compile_install "glib" 
 
+<<<<<<< HEAD
 #export PATH=/opt/git/gimp/bin:$PATH
 #export LD_LIBRARY_PATH=/opt/git/gimp/lib:$LD_LIBRARY_PATH
 #export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig:$PKG_CONFIG_PATH
@@ -55,20 +56,34 @@ export PATH="$PREFIX/bin:$PATH"
 export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH" 
 export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH" 
 export ACLOCAL_FLAGS="-I $PREFIX/share/aclocal $ACLOCAL_FLAGS"
+=======
+export PATH=/opt/git/gimp/bin:$PATH
+export LD_LIBRARY_PATH=/opt/git/gimp/lib
+export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig
+>>>>>>> 969cb2bddcff9dfcf3cd22747ef9ae0d496e206b
 
 # GTK 
 #co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
 # BABL
 #co_compile_install "babl" 
+co_compile_install "babl" 
 # GEGL
 #co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
+<<<<<<< HEAD
 #co_compile_install "gegl" "" 
+=======
+co_compile_install "gegl" 
+>>>>>>> 969cb2bddcff9dfcf3cd22747ef9ae0d496e206b
 # GIMP
 co_compile_install "gimp" "--enable-gimp-remote --prefix=/opt/git/gimp/  --with-gimpdir=.gimp-git" 
 #co_compile_install "gimp" "--prefix=/opt/git/gimp/  --with-gimpdir=.git/gimp" 
 
 
+<<<<<<< HEAD
 cat > /usr/share/applications/git-gimp.desktop << EOF
+=======
+cat > /usr/share/applications/git/gimp.desktop << EOF
+>>>>>>> 969cb2bddcff9dfcf3cd22747ef9ae0d496e206b
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -77,7 +92,11 @@ GenericName=Image Editor - GIT
 Comment=Create images and edit photographs - GIT
 Exec=/opt/git/gimp/bin/gimp-2.7 %U
 TryExec=/opt/git/gimp/bin/gimp-2.7
+<<<<<<< HEAD
 Icon=/opt/git/gimp/share/icons/hicolor/48x48/apps/gimp.png
+=======
+Icon=/opt/git/gimp/share/icons/hicolor/scalable/apps/gimp.svg
+>>>>>>> 969cb2bddcff9dfcf3cd22747ef9ae0d496e206b
 Terminal=false
 Categories=Graphics;2DGraphics;RasterGraphics;GTK;
 StartupNotify=true
