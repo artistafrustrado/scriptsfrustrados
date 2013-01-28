@@ -40,27 +40,21 @@ cd /usr/src/frustrado
 # GLIB
 #co_compile_install "glib" 
 
-<<<<<<< HEAD
 #export PATH=/opt/git/gimp/bin:$PATH
 #export LD_LIBRARY_PATH=/opt/git/gimp/lib:$LD_LIBRARY_PATH
 #export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig:$PKG_CONFIG_PATH
 #export GEGL_LIBS=/opt/git/gimp/lib
 
 #export GEGL_CFLAGS=/opt/git/gimp/bin 
-#export GEGL_LIBS=/opt/git/gimp/lib 
-#export LD_RUN_PATH=/opt/git/gimp/lib:$LD_RUN_PATH 
-#export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig/
+export GEGL_LIBS=/opt/git/gimp/lib 
+export LD_RUN_PATH=/opt/git/gimp/lib:$LD_RUN_PATH 
+export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig/
 
 PREFIX=/opt/git/gimp
 export PATH="$PREFIX/bin:$PATH" 
 export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH" 
 export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH" 
 export ACLOCAL_FLAGS="-I $PREFIX/share/aclocal $ACLOCAL_FLAGS"
-=======
-export PATH=/opt/git/gimp/bin:$PATH
-export LD_LIBRARY_PATH=/opt/git/gimp/lib
-export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig
->>>>>>> 969cb2bddcff9dfcf3cd22747ef9ae0d496e206b
 
 # GTK 
 #co_compile_install "gtk+" "--with-xinput=yes --disable-gtk-doc"
@@ -68,22 +62,13 @@ export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig
 #co_compile_install "babl" 
 co_compile_install "babl" 
 # GEGL
-#co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
-<<<<<<< HEAD
-#co_compile_install "gegl" "" 
-=======
-co_compile_install "gegl" 
->>>>>>> 969cb2bddcff9dfcf3cd22747ef9ae0d496e206b
+co_compile_install "gegl" "" "sed -r 's:#include <ffmpeg/avformat.h>:#include <libavformat/avformat.h>:g' -i operations/external/ff-load.c" 
 # GIMP
 co_compile_install "gimp" "--enable-gimp-remote --prefix=/opt/git/gimp/  --with-gimpdir=.gimp-git" 
 #co_compile_install "gimp" "--prefix=/opt/git/gimp/  --with-gimpdir=.git/gimp" 
 
 
-<<<<<<< HEAD
 cat > /usr/share/applications/git-gimp.desktop << EOF
-=======
-cat > /usr/share/applications/git/gimp.desktop << EOF
->>>>>>> 969cb2bddcff9dfcf3cd22747ef9ae0d496e206b
 [Desktop Entry]
 Version=1.0
 Type=Application
