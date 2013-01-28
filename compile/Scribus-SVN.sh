@@ -1,10 +1,14 @@
 #!/bin/bash
 
 
-apt-get install gcc g++ cmake subversion  ghostscript qt-devel pkg-config lcms-devel libjpeg-devel libtiff-devel libart_lgpl-devel cups-devel libxml2 and libxml2-devel – you should already have libxml2 python and python-devel fontconfig-devel openssl-devel freetype and freetype-devel python-imaging-devel tk tkinter cairo cairo-devel qt4 qt4-devel 
+#apt-get install gcc g++ cmake subversion  ghostscript qt-devel pkg-config lcms-devel libjpeg-devel libtiff-devel libart_lgpl-devel cups-devel libxml2 and libxml2-devel – you should already have libxml2 python and python-devel fontconfig-devel openssl-devel freetype and freetype-devel python-imaging-devel tk tkinter cairo cairo-devel qt4 qt4-devel 
 
 apt-get build-dep scribus-ng
-apt-get install gcc g++ cmake subversion ghostscript qt-devel pkg-config lcms-devel libjpeg-devel libtiff-devel libart_lgpl-devel cups-devel libxml2 and libxml2-devel libxml2 python-devel fontconfig-devel openssl-devel freetype freetype-devel python-imaging-devel tk tkinter cairo acairo-devel qt4 qt4-devel qt4-qmake 
+#apt-get install gcc g++ cmake subversion ghostscript qt-devel pkg-config lcms-devel libjpeg-devel libtiff-devel libart_lgpl-devel cups-devel libxml2 and libxml2-devel libxml2 python-devel fontconfig-devel openssl-devel freetype freetype-devel python-imaging-devel tk tkinter cairo acairo-devel qt4 qt4-devel qt4-qmake 
+
+apt-get install debhelper cmake gcc libqt4-dev libcairo2-dev  zlib1g-dev liblcms1-dev libtiff4-dev libcups2-dev libxml2-dev  gettext python-all-dev libboost-python-dev libaspell-dev libpodofo-dev quilt subversion 
+
+# git clone git@scribus.net:scribus.git
 
 mkdir /usr/src/frustrado/scribus -p
 mkdir /opt/svn/scribus -p

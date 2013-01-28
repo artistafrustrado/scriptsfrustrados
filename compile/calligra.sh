@@ -24,7 +24,6 @@ then
 	git pull
 	rm -fr /opt/git/calligra/kde4/build/calligra
 	mkdir -p /opt/git/calligra/kde4/build/calligra
-	mkdir -p /opt/git/calligra/kde4/inst
 else
 
 	mkdir -p /opt/git/calligra/kde4/src/
