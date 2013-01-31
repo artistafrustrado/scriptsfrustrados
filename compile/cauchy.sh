@@ -1,10 +1,11 @@
 #!/bin/bash
 
-hg clone https://bitbucket.org/cyrille/cauchy
-#!/bin/bash
+mkdir -p /usr/src/frustrado/calligra
+cd /usr/src/frustrado/calligra
 
-#mkdir -p /usr/src/frustrado/calligra
-#cd /usr/src/frustrado/calligra
+hg clone https://bitbucket.org/cyrille/cauchy
+
+
 
 rm -fr /tmp/cauchybuild
 mkdir /tmp/cauchybuild

@@ -43,11 +43,10 @@ cd /usr/src/frustrado
 export PATH=/opt/git/gimp/bin:$PATH
 export LD_LIBRARY_PATH=/opt/git/gimp/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig:$PKG_CONFIG_PATH
->>>>>>> 2ff69e5ffc3e6bd5494cc89fb98cb531a62e2537
 
-export GEGL_LIBS=/opt/git/gimp/lib 
-export LD_RUN_PATH=/opt/git/gimp/lib:$LD_RUN_PATH 
-export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig/
+#export GEGL_LIBS=/opt/git/gimp/lib 
+#export LD_RUN_PATH=/opt/git/gimp/lib:$LD_RUN_PATH 
+#export PKG_CONFIG_PATH=/opt/git/gimp/lib/pkgconfig/
 
 PREFIX=/opt/git/gimp
 export PATH="$PREFIX/bin:$PATH" 

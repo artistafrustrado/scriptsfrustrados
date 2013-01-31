@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#mkdir -p /usr/src/frustrado/calligra
-#cd /usr/src/frustrado/calligra
+mkdir -p /usr/src/frustrado/calligra
+cd /usr/src/frustrado/calligra
 
-#git clone --depth=3 git://github.com/imageworks/OpenColorIO.git
+git clone --depth=3 git://github.com/imageworks/OpenColorIO.git
 
 rm -fr /tmp/ociobuild
 mkdir /tmp/ociobuild

@@ -24,13 +24,16 @@ export PKG_CONFIG_PATH=/opt/git/libs/lib/pkgconfig:$PKG_CONFIG_PATH
 
 clone_and_compile()
 {
+
+	cd /usr/src/frustrado/calligra
+
         DIR=$1
         PARAMS=$2
         COMMAND=$3
         echo "Installing $DIR"
 	
 	#hg clone https://bitbucket.org/opengtl/$DIR
-	#hg clone https://bitbucket.org/opengtl/$DIR
+#	hg clone https://bitbucket.org/opengtl/$DIR
 
 	rm -fr /tmp/$DIR-build
 	mkdir -p /tmp/$DIR-build
@@ -42,6 +45,8 @@ clone_and_compile()
 
 }
 
+mkdir -p /usr/src/frustrado/calligra
+clone_and_compile opengtl "" ""
 clone_and_compile libqtgtl "" ""
 
 

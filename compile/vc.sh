@@ -1,6 +1,9 @@
 #!/bin/bash
 
-#git clone --depth=3 git://gitorious.org/vc/vc.git
+mkdir -p /usr/src/frustrado/calligra
+cd /usr/src/frustrado/calligra
+
+git clone --depth=3 git://gitorious.org/vc/vc.git
 
 rm -fr /tmp/vcbuild
 mkdir /tmp/vcbuild
