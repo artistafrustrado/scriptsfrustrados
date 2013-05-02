@@ -8,6 +8,8 @@ apt-get build-dep scribus-ng
 
 apt-get install debhelper cmake gcc libqt4-dev libcairo2-dev  zlib1g-dev liblcms1-dev libtiff4-dev libcups2-dev libxml2-dev  gettext python-all-dev libboost-python-dev libaspell-dev libpodofo-dev quilt subversion 
 
+apt-get install libtiff4-dev python-dev libfreetype6-dev libcups2-dev libxml2-dev liblcms1-dev libpixman-1-dev libaspel-dev libfontconfig1-dev
+
 # git clone git@scribus.net:scribus.git
 
 mkdir /usr/src/frustrado/scribus -p
@@ -26,7 +28,7 @@ else
 	cd $DIR
 fi
 echo "COMPILING"
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/svn/scribus
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/svn/scribus -DCMAKE_LIBRARY_PATH=/opt/git/libs/lib -DCMAKE_INCLUDE_PATH=/opt/git/libs/include
 make
 make install
 

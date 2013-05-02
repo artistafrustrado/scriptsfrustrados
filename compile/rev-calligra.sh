@@ -3,8 +3,8 @@
 #apt-get build-dep calligra
 #apt-get build-dep koffice
 
-apt-get install libvc-dev libkactivities-dev libwps-dev libvisio-dev
-apt-get install llvm-3.1-dev clang-3.1 compiler-rt libc++-dev libc++abi-dev llvm-3.1-examples llvm-3.1-doc 
+#apt-get install libvc-dev libkactivities-dev libwps-dev libvisio-dev
+#apt-get install llvm-3.2-dev clang-3.2 compiler-rt libc++-dev libc++abi-dev llvm-3.2-examples llvm-3.2-doc 
 
 export INCLUDE=$INCLUDE:/opt/git/libs/include
 export PATH=/opt/git/libs/bin:$PATH
@@ -45,6 +45,7 @@ fi
 
 cd /opt/git/calligra/kde4/build/calligra
 cmake -DCMAKE_INCLUDE_PATH=/opt/git/libs/include -DCMAKE_LIBRARY_PATH=/opt/git/libs/lib -DCMAKE_INSTALL_PREFIX=/opt/git/calligra/kde4/inst /opt/git/calligra/kde4/src/calligra -DCMAKE_BUILD_TYPE=RelWithDebInfo #&& make && make install 
+make && make install 
 
 #&& make -j6 && make install
 #cmake -DCMAKE_INSTALL_PREFIX=/opt/git/calligra/kde4/inst /opt/git/calligra/kde4/src/calligra -DCMAKE_BUILD_TYPE=RelWithDebInfo && make -j6 && make install

@@ -6,14 +6,14 @@ cd /usr/src/frustrado
 DIR=inkscape
 
 apt-get build-dep inkscape
-apt-get install ubuntu-dev-tools bzr-doc bzrtools bzr-rebase bzr-search bzr-stats libdbus-c++-dev libdbus-1-dev libdbusmenu-tools 
-
+apt-get install ubuntu-dev-tools bzr-doc bzrtools bzr-rebase bzr-search bzr-stats libdbus-c++-dev libdbus-1-dev libdbusmenu-tools  libcdr-dev libcdr-doc libcdr-tools 
 
 if [ -d $DIR ]; then
 	echo "Directory exists - UPDATING"
 	cd $DIR
 	#bzr update
-	bzr pull
+	#bzr pull
+	bzr update
 else 
 	echo "Directory does not exists - CHECKING OUT"
 	#bzr co https://inkscape.bzr.sourceforge.net/bzrroot/inkscape/inkscape/trunk inkscape
