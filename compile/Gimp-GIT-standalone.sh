@@ -34,6 +34,8 @@ co_compile_install()
 
 #apt-get build-dep gimp
 
+apt-get install libgexiv2-dev
+
 mkdir -p /usr/src/frustrado
 cd /usr/src/frustrado
 

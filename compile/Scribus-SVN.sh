@@ -28,7 +28,7 @@ else
 	cd $DIR
 fi
 echo "COMPILING"
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/opt/svn/scribus -DCMAKE_LIBRARY_PATH=/opt/git/libs/lib -DCMAKE_INCLUDE_PATH=/opt/git/libs/include
+cmake -DUSE_QT5=1 -DCMAKE_INSTALL_PREFIX:PATH=/opt/svn/scribus -DCMAKE_LIBRARY_PATH=/opt/git/libs/lib -DCMAKE_INCLUDE_PATH=/opt/git/libs/include
 make
 make install
 
