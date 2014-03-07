@@ -2,12 +2,12 @@
 
 #hg clone https://bitbucket.org/opengtl/opengtl/
 
-#hg clone https://bitbucket.org/opengtl/opengtl
-#hg clone https://bitbucket.org/opengtl/gtldesigner
-#hg clone https://bitbucket.org/opengtl/libqtgtl
-#hg clone https://bitbucket.org/opengtl/shiva-collections
+hg clone https://bitbucket.org/opengtl/opengtl
+hg clone https://bitbucket.org/opengtl/gtldesigner
+hg clone https://bitbucket.org/opengtl/libqtgtl
+hg clone https://bitbucket.org/opengtl/shiva-collections
 
-alias llvm-config="/usr/bin/llvm-config-3.1"
+alias llvm-config="/usr/bin/llvm-config-3.5"
 
 export INCLUDE=$INCLUDE:/opt/git/libs/include
 export PATH=/opt/git/libs/bin:$PATH
